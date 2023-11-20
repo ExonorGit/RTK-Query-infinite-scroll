@@ -1,0 +1,5 @@
+@use "@/app/styles/global.scss";
+
+.container {
+  @extend .container;
+}

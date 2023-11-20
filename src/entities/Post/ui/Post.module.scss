@@ -1,0 +1,69 @@
+@mixin lines-num($num) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+.container {
+  display: flex;
+  margin-bottom: 30px;
+  border: 1px solid #000;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: 20px;
+  border-radius: 3px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  @include lines-num(1);
+  font-weight: 900;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.text {
+  @include lines-num(2);
+  font-size: 1.3em;
+  padding-left: 10px;
+
+  &::first-letter {
+    text-transform: uppercase;
+    padding-left: 30px;
+  }
+}
+
+.buttonBlock {
+  display: flex;
+  flex: 0.15;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  border: 3px solid purple;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgb(193, 0, 193);
+  color: #fff !important;
+  transition: background-color 0.25s;
+
+  &:hover {
+    background-color: purple;
+  }
+}
+
+.wide {
+  -webkit-line-clamp: none;
+  line-clamp: none;
+}

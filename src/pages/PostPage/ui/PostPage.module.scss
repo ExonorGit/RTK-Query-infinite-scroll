@@ -1,0 +1,9 @@
+@use "@/app/styles/global.scss";
+
+.container {
+  @extend .container;
+  height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
